@@ -1,0 +1,105 @@
+@import "./common.scss";
+@function pr($p){
+    @return($p/37.5)+rem
+}
+.min {
+   width: 100%;
+//    height: pr(480);
+   background-color: #ededed;
+   margin-top: pr(10);
+}
+
+
+.write {
+    font-size: pr(16) ;
+    margin: 0;
+}
+
+.mui-card {
+    margin: 0;
+}
+
+
+div.hate{
+margin: pr(10) pr(-16) pr(-10) pr(-16) !important;
+padding:  0 !important; 
+
+    .menu {   
+        background-color: #f9f9f9;
+        display: flex;
+        flex-wrap: wrap;   
+        
+        li {
+           
+            width: 33.33333%;
+            border: pr(1) solid#cccccc;
+            padding: 0;
+            text-align: center;
+            color: #333333;
+            height: pr(45);
+            font-size: pr(14);
+            line-height: pr(45);
+            background-color: #fff;
+            
+           
+            a{
+               
+                width: 100%;
+                height: 100%;
+            }
+        
+            
+        }
+
+        
+    }
+}
+
+.scroll {
+    .footer {
+        position: absolute;
+        z-index: 99;
+        bottom: pr(2);
+        width: 100%;
+        height: pr(96);
+        .footer-top {
+            height: pr(36);
+            display: flex;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            a {
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #5a5a5a;
+            }
+            .login {
+                flex: 1;
+            }
+            .register {
+                flex: 1;
+                border-left: 1px solid #ccc;
+                border-right: 1px solid #ccc;
+            }
+            .back-top {
+                height: 100%;
+                flex-basis: pr(150);
+            }
+        }
+        .footer-bottom {
+            height: pr(60);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            p {
+                text-align: center;
+                color: #5a5a5a;
+                .warning {
+                    color: $deepRed;
+                }
+            }
+        }
+    }
+}
+

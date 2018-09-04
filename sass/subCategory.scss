@@ -1,0 +1,212 @@
+@import "./common.scss";
+//侧面菜单部分
+.mui-off-canvas-left {
+    width: 80%;
+    background: #fff;
+    //标题
+    .title {
+        text-align: center;
+        position: relative;
+        height: pr(40);
+        line-height: pr(40);
+        font-size: $font-lg;
+        border-bottom: pr(1) solid #ccc;
+        .close {
+            position: absolute;
+            right: pr(10);
+            top: pr(5);
+            font-size: pr(24);
+        }
+    }
+    //分类
+    .kind {
+        padding: pr(15) pr(10);
+        .all {
+            margin-bottom: pr(10);
+            .brand {
+                color: #000;
+            }
+            .allbrand {
+                color: $orangeRed;
+                font-size: $font-xs;
+                margin-left: pr(3);
+            }
+            .more {
+                float:right;
+            }
+        }
+        .trademark {
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                
+                overflow: hidden;
+                &.hiden {
+                    height:pr(70);
+                }
+                li {
+                    width: 30%;
+                    height:pr(30);
+                    border-radius: pr(5);
+                    background-color: #f2f2f2;
+                    margin-bottom: pr(5);
+                    margin-right:pr(5);
+
+                    a {
+                        display: flex;
+                        width:100%;
+                        height: 100%;
+                        font-size: $font-xs;
+                        color: #666;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                    &.active {
+                        background-color: $orangeRed;
+                        a {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//主界面部分
+.inner {
+    background-color: #f2f2f2;
+    //导航栏
+    .navbar {
+        width: 100%;
+        height: pr(38);
+        border-bottom: pr(1) solid #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 pr(10);
+        background: linear-gradient(to bottom, #fff, #ececec);
+        .breadcrumb {
+            display: flex;
+            .arrows {
+                padding: pr(0) pr(3);
+            }
+            li {
+                font-size: $font-sm;
+                a {
+                    color: #5a5a5a;
+                    font-size: $font-sm;
+                }
+            }
+        }
+        button {
+            height: pr(30);
+            background: linear-gradient(to bottom, #dbdbdb, #fff);
+            border-radius: pr(10);
+        }
+    }
+    //商品详情
+    .products {
+        background-color: #fff;
+        .product {
+            border-bottom: pr(1) solid #ccc;
+            display: flex;
+            padding: pr(15) pr(10);
+            .img {
+                margin-right: pr(10);
+            }
+            .right {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                .name {
+                    color: #000;
+                    font-size: $font-md;
+                }
+                .price {
+                    font-size: $font-md;
+                    color: $lightRed;
+                }
+                .info {
+                    font-size: $font-xs;
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+    //分页
+    .paging {
+        .pagination {
+            padding: pr(20) pr(0);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            .pager {
+                padding: pr(5) pr(20);
+                background: linear-gradient(to bottom, #eeeeee, #d8d8d8);
+                color: #666;
+                border-radius: pr(10);
+                border: pr(1) solid #bbb;
+            }
+            .dropdown {
+                position: relative;
+                background-color: #fff;
+                .dropdown-toggle {
+                    position: relative;
+                    height:pr(35);
+                    width: pr(85);
+                    border: pr(1) solid #666;
+                    border-radius: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    span {
+                        font-size: $font-md;
+
+                    }
+                    #down {
+                        font-size: $font-xs;
+                        position: absolute;
+                        right:pr(5);
+                        top:pr(10);
+                    }
+                }
+                .dropdown-menu {
+                    display: none;
+                    // bottom:pr(30);
+                    position: absolute;
+                    width:100%;
+                    border-right: pr(1) solid #666;
+                    border-left: pr(1) solid #666;
+                    li {
+                        background-color: #fff;
+                        width:100%;
+                        text-align: center;
+                        border-bottom: pr(1) solid #666;
+                        a {
+                            display: block;
+                            padding:pr(5) pr(0);
+                            font-size: $font-md;
+                        }
+                        
+                    }
+                    
+                }
+            }
+            
+        }
+        .link {
+            padding: pr(0) pr(10);
+            margin-bottom: pr(30);
+            .title {
+                font-size: $font-sm;
+                color: #000;
+            }
+            p {
+                margin-top: pr(5);
+                font-size: $font-xs;
+                color: #666;
+            }
+        }
+    }
+}

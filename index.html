@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="./images/icon-m.jpg" type="image/x-icon">
+    <title>慢慢买比价网--手机版</title>
+    <!-- <script src="lib/zepto/zepto.min.js"></script> -->
+    <script src="./lib/jquery.min.js"></script>
+    <script src="lib/mui/js/mui.min.js"></script>
+    <link rel="stylesheet" href="lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="lib/iconfont/iconfont.css">
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <link rel="stylesheet" href="./lib/iconfont/iconfont.css">
+
+    <link rel="stylesheet" href="./lib/animate/animate.css">
+
+
+    <!-- 注意在引入自己写的css样式前 要先引入common.js 因为rem的初始化代码写在了common.js里 -->
+    <script src="js/common.js"></script>
+    <script src="./js/index.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+
+
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部 -->
+        <div class="header">
+            <a class="logo"></a>
+            <a class="download"></a>
+        </div>
+        <!-- 主体部分 -->
+        <div class="main">
+            <!-- 搜索栏 -->
+            <div class="searchbar">
+                <div class="search">
+                    <input type="text" placeholder="请输入你想比价的商品">
+                    <span class="searchbtn">搜索</span>
+                </div>
+            </div>
+            <!-- 内部滚动区 -->
+            <div class="scroll">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <!--这里放置真实显示的DOM内容-->
+                        <div class="inner">
+                            <!-- 渲染导航菜单 -->
+                            <div class="nav">
+
+                            </div>
+
+                            <!-- 超值折扣推荐 -->
+                            <div class="discount">
+                                <div class="top">
+                                    <span>超值折扣推荐</span>
+                                    <img src="./images/more.png" alt="">
+                                </div>
+
+                                <!-- 模板渲染超值折扣 -->
+                                <div class="products">
+                                   
+
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                      
+
+                        <!-- 更多优惠信息 -->
+                        <div class="button">
+                            <button class="mui-btn">更多优惠信息>></button>
+                        </div>
+
+                        <!-- 品牌排行 -->
+                        <div class="ranking">
+                            <span>品牌排行</span>
+                            <img src="./images/more.png" alt="">
+                        </div>
+                        
+
+                        <div class="footer">
+                            <div class="footer-top">
+                                <a class="login">登录</a>
+                                <a class="register">注册</a>
+                                <a class="back-top"><span class="iconfont icon-ai-top"></span>返回顶部</a>
+                            </div>
+                            <div class="footer-bottom">
+                                <p><span class="warning">手机APP下载</span> <span>慢慢买手机版--掌上比价平台</span></p>
+                                <p>m.manmanbuy.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- App下载 -->
+        <div class="download1">
+            <a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.manmanbuy.bijia">
+                <img src="./images/app.png" alt="">
+            </a>
+            
+        </div>
+    </div>
+    
+
+    <!-- 导航菜单模板渲染 -->
+    <script id="navlist" type="text/html">
+        
+        <ul>
+            {{ each result v i}}
+
+            {{ if i == 6 }}
+            <li class="animated swing">
+                <div class="popularity">
+                    <span>人气</span>
+                </div>
+                <a href="{{v.titlehref}}" data-id="{{v.indexmenuId}}">{{#v.img}}<span>{{v.name}}</span></a>
+            </li>
+            
+            {{else}}
+            <li class="animated swing"><a href="{{v.titlehref}}" data-id="{{v.indexmenuId}}">{{#v.img}}<span>{{v.name}}</span></a></li>
+            {{ /if }}
+            {{ /each }}
+        </ul>
+    
+    </script>
+
+
+
+
+    <!-- 超值折扣推荐模板   -->
+    <script id="productlist" type="text/html">
+
+        <ul>
+            {{ each result v i}}
+                <li>
+                    <a href="#" data-id="{{v.productId}}">
+                        <div class="left">
+                            {{#v.productImgSm}}
+                        </div>
+
+                        <div class="right">
+                            <p class="title">
+                                <span>{{v.productName}}</span>
+                                <span class="color">{{v.productPinkage}}</span>
+                            </p>
+                            <p class="other">
+                                <span>{{v.productFrom}}丨{{v.productTime}}</span>
+                                <span class="comment"><i class="iconfont icon-xinxi"></i>{{v.productComCount}}</span>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                {{ /each }}
+            </ul>
+
+    </script>
+</body>
+</html>
